@@ -1,0 +1,52 @@
+
+        <div class="container">
+        	<div class="row my-list">
+                  <h3 class="text-center" style="font-size: 21px;width: 96%; margin-left: 2%;">
+                    {{vm.movie.Title}}
+                  </h3>
+               <div class="col-xs-4 item-photo">
+                    <img style="max-width:120%;" 
+                         ng-src="{{vm.movie.Poster != 'N/A' ? vm.movie.Poster :'../../assets/img/Movie2.png'}}" />
+                </div>
+                <div class="col-xs-5" style="border:0px solid gray">
+                    <small>
+                        <ul style="margin-left: 30px;">
+                            <li>Date: {{vm.movie.Released}}</li>
+                            <li>Country: {{vm.movie.Country}}</li>
+                            <li>Runtime: {{vm.movie.Runtime}}</li>  
+                            <li>Genre: {{vm.movie.Genre}}</li>
+                            <li>Director: {{vm.movie.Director}}</li>
+                            <li>Writer: {{vm.movie.Writer}}</li>
+                            <li>Actors: {{vm.movie.Actors}}</li>
+                            <li>Votes: {{vm.movie.imdbVotes}}</li>
+                            <li>Metascore: {{vm.movie.Metascore}}</li>
+                            <li>Ratings: 
+                               <ul>
+                                 <li> - imdb: {{vm.movie.imdbRating}}</li>
+                                 <li ng-repeat="rating in vm.movie.Ratings">
+                                   -  {{rating.Source}}: {{rating.Value}} 
+                                 </li>
+                               </ul>
+                             </li>
+                           </ul>
+                       </ul>  
+                    </small>
+
+                </div>                              
+        
+                <div class="col-xs-12">
+
+                    <div style="width:100%;border-top:1px solid silver; margin-top: 5px;">
+                    <ul class="menu-items">
+                        <li class="active">Synopsis</li>
+                    </ul>                       
+                        <p style="padding:5px;">
+                            {{vm.movie.Plot}}
+
+                        </p>
+                        
+                    </div>
+                </div>		
+            </div>
+        </div>        
+

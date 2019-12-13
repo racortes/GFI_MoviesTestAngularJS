@@ -1,0 +1,110 @@
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: absolute;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.navbar {
+	margin-bottom: 20px;
+  }
+ @-ms-viewport {
+	width: device-width;
+  }
+  @-o-viewport {
+	width: device-width;
+  }
+  @viewport {
+	width: device-width;
+  }
+
+  img{max-width:100%;}
+.my-list {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #f5efef;
+    float: left;
+    margin: 15px 0;
+    border-radius: 5px;
+    box-shadow: 2px 3px 0px #e4d8d8;
+    position:relative;
+    overflow:hidden;
+}
+.my-list h3{
+  font-size: 14px;
+  font-weight: bolder;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: 1px solid #ccc4c4;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+  height: 35px;
+  vertical-align: middle;
+  text-align: center;
+}
+	.my-list span{float:left;font-weight: 500;}
+	.my-list span:last-child{float:right;}
+	.my-list .sub{
+    height: 370px;
+    width: 100%;
+    float: left;
+    margin: 5px 0;
+    border-top: 1px solid #ccc4c4;
+    margin-top: 5px;
+    padding-top: 340px;
+    color: #afadad;
+    }
+	.detail {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    text-align: center;
+    background: #fff;height: 100%;width:100%;
+	
+}
+.menu-items {
+  margin-bottom: 0px;
+    margin-top: 10px;
+}
+
+main {
+  min-height: 100%;
+}
+
+.navbar li, .pagination li {
+   cursor: pointer;
+}
+
+
+.page-footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #e7e7e7;
+  text-align: center;
+  border-top: 1px solid rgb(194, 189, 189);
+
+}
+
+
+.item {
+  position: absolute;
+  display: block;
+}
+

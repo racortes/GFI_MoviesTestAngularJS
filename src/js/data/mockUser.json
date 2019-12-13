@@ -1,0 +1,18 @@
+{
+  "data": 
+      {"accountInfo" : {
+        "Name": "Paco",
+        "Surname" : "Pérez",
+        "Age" : 42,
+        "Address": "Avenida sin nombre 32"
+      },
+      "favouriteMovies" : [],
+      "email":"gfi@gfi.com",
+      "password": "gfi"
+    },
+    "status": 200,
+    "statusText":"OK",
+    "JWT": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImp0aSI6IjJkNGViZjdjLTliNDMtNDg3NS1iYzhhLWY2ZTZmZGFkYTVhMCIsImlhdCI6MTU3NjE3MjE3OCwiZXhwIjoxNTc2MTc1Nzc4fQ.z5weqKWmWzrJIqB8ZRI0KviC9-u-H2VEsneQFhtanig"
+
+}
+

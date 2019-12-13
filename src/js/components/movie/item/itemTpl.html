@@ -1,0 +1,11 @@
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <div class="my-list" >
+      <h3>{{movie.Title}}</h3>
+           <span>{{vm.files.capitalizeStr(movie.Type)}}</span>
+           <span class="pull-right">{{movie.Year}}</span>
+        <div class="sub" ng-style="vm.style(movie.Poster)">
+        <a ng-if="favourite"class="btn btn-primary" ng-click="vm.remove(movie.imdbID)">Delete from favourites</a>
+        <a ng-if="!favourite" ng-disabled="disabled" class="btn btn-primary" ng-click="vm.add(movie)">Add favourite</a>
+        <a class="btn btn-primary pull-right" ng-click="vm.goTo(movie.imdbID)">More Info</a>
+      </div>
+</div>

@@ -1,0 +1,19 @@
+<nav aria-label="..." ng-if="vm.cells > 1">
+        <ul class="pagination">
+          <li ng-if="vm.total>0" class="page-item" ng-click="vm.goTo(0)" ng-class="{'disabled': vm.current == 0}">
+            <a class="page-link">First</a>
+          </li>
+          <li ng-if="vm.total>0" class="page-item" ng-click="vm.goTo(vm.current == 0 ? 0 : vm.current-1)" ng-class="{'disabled': vm.current == 0}">
+             <a class="page-link">Previous</a>
+          </li>
+          <li ng-if="vm.total>0" ng-repeat="n in vm.calcRange() || vm.rango" class="page-item" ng-class="{'active': n == vm.current}" ng-click="vm.goTo(n)">
+             <a class="page-link">{{n+1}}</a>
+          </li>
+          <li ng-if="vm.total>0" class="page-item" ng-class="{'disabled': vm.current >= vm.cells-1}" ng-click="vm.goTo(vm.current < vm.cells-1 ? vm.current+1 : vm.cells-1)">
+             <a class="page-link">Next</a>
+          </li>
+          <li ng-if="vm.total>0" class="page-item" ng-class="{'disabled': vm.current >= vm.cells-1}" ng-click="vm.goTo(vm.cells-1)">
+             <a class="page-link">Last</a>
+          </li>
+        </ul>
+</nav>

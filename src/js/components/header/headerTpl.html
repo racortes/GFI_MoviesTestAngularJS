@@ -1,0 +1,60 @@
+ <nav class="navbar navbar-default" >
+    <div class="container-fluid">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" ng-click="isCollapsed = !isCollapsed" aria-expanded="true">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>        
+          <a class="navbar-brand">GFI Test</a>
+      </div>
+
+      <div class="navbar-collapse collapse in" collapse="isCollapsed" aria-expanded="true">
+        <ul class="nav navbar-nav">
+          <li ng-class="{'active' : vm.selectedTab=='/home/'}">
+              <a ng-click="vm.tab('/home/')" >Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li ng-class="{'active' : vm.selectedTab=='/search/'}">
+              <a ng-click="vm.tab('/search')" >Search <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="dropdown" dropdown ng-class="{'active' : vm.selectedTab=='/favourites/' || vm.selectedTab=='/users/'}">
+            <a class="dropdown-toggle" dropdown-toggle role="button" aria-expanded="false">Users <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li ng-if="!vm.isAuthorized">
+                  <a ng-click="vm.tab('/users')">Login</a>      
+                </li>
+                <li ng-if="vm.isAuthorized">
+                    <a ng-click="vm.logOut()">Logout</a>      
+                  </li>
+               <li ng-if="vm.isAuthorized">
+                  <a ng-click="vm.tab('/favourites')">Favourites</a>      
+                </li>
+                <li class="divider"></li>
+                <li>
+                    <a ng-click="vm.tab('/about')">About</a>      
+                </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group" ng-if="vm.selectedTab=='/favourites/' || vm.selectedTab=='/search/'">
+            <input type="text" class="form-control" name="title" ng-keyup="vm.filter({model:vm.model, key:'s'})" placeholder="Type title to search" ng-model="vm.model">
+          </div>
+          <button ng-if="vm.selectedTab=='/home/'" type="submit" class="btn btn-default" ng-click="vm.clickBtn()">Refresh suggestions</button>
+          <select ng-if="vm.selectedTab=='/favourites/' || vm.selectedTab=='/search/'" class="form-control" name="type" ng-change="vm.filter({model:vm.modelType, key:'type'})" ng-model="vm.modelType">
+              <option ng-repeat="opt in ['Any type','Movie','Series','Episodie']">{{opt}}</option>
+          </select> 
+          <select ng-if="vm.selectedTab=='/favourites/' || vm.selectedTab=='/search/'" class="form-control" name="year" ng-change="vm.filter({model:vm.modelYear, key:'year'})" ng-model="vm.modelYear">
+              <option>Any year</option>
+              <option ng-repeat="opt in vm.files.range(1970,2019)">{{opt}}</option>
+          </select>          
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li ng-class="{'active' : vm.selectedTab=='/about/'}"> 
+            <a ng-click="vm.tab('/about')">About</a> 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
